@@ -16,17 +16,14 @@ public class Chytac : MonoBehaviour
 
     // Update is called once per frame
 
-    Rigidbody hrac;
-
-    void start(){
-        hrac = gameObject.GetComponent<Rigidbody>();
-    }
 
     void Update()
     {
+        Debug.DrawRay(transform.position, new Vector3(-mover.zrot, 10f, mover.xrot), Color.blue, 0);
+        Debug.Log(new Vector3(-mover.zrot, 10f, mover.xrot));
         if(Input.GetButtonDown("Fire1")){
             caught = false;
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(mover.xrot, 0f, mover.zrot), 100);
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(-mover.zrot, 0f, mover.xrot), 100);
             float mindist = 30f;
 
             foreach (RaycastHit hit in hits){
@@ -41,10 +38,10 @@ public class Chytac : MonoBehaviour
                             chytene = hit.collider.gameObject.transform.root.gameObject;
                         }
                         if (chytene.TryGetComponent<Rigidbody>(out Rigidbody rbx)){
-                            Debug.Log(hrac.position);
+                            Debug.Log(transform.position);
                             Debug.Log(rbx.position);
                             Debug.Log("Chytene");
-                            rozdiel = hrac.position - rbx.position;
+                            rozdiel = transform.position - rbx.position;
                             caught = true;
                         }
                     }
@@ -53,7 +50,7 @@ public class Chytac : MonoBehaviour
         }
         if (Input.GetButton("Fire1")){
             if(caught){
-                chytene.GetComponent<Rigidbody>().position = new Vector3(hrac.position.x + rozdiel.x, hrac.position.y + 4f, hrac.position.z + rozdiel.z);
+                chytene.GetComponent<Rigidbody>().position = new Vector3(transform.position.x + rozdiel.x, transform.position.y + 4f, transform.position.z + rozdiel.z);
             }
         }   
     }
