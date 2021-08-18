@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: GoPro
   m_TagString: MainCamera
@@ -506,7 +507,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 53.23
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -515,7 +516,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1e+17
-  field of view: 5.1
+  field of view: 60
   orthographic: 0
   orthographic size: 3
   m_Depth: -1
@@ -547,6 +548,23 @@ Transform:
   m_Father: {fileID: 1250425538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443718008e90fbe4bae24d20d6ece588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rozdiel: {x: 0, y: 0, z: 0}
+  mover: {fileID: 1250425539}
+  offsetx: 0
+  offsety: 0
+  chytene: {fileID: 0}
 --- !u!1001 &1101692134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,7 +636,6 @@ GameObject:
   - component: {fileID: 1250425541}
   - component: {fileID: 1250425540}
   - component: {fileID: 1250425539}
-  - component: {fileID: 1250425544}
   m_Layer: 0
   m_Name: Bean
   m_TagString: Untagged
@@ -657,8 +674,8 @@ MonoBehaviour:
   kamera: {fileID: 963194228}
   look_speed: 80
   walk_speed: 200
-  xrot: 0
   zrot: 0
+  xrot: 0
 --- !u!54 &1250425540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -738,21 +755,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250425537}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1250425544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250425537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443718008e90fbe4bae24d20d6ece588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rozdiel: {x: 0, y: 0, z: 0}
-  mover: {fileID: 1250425539}
-  chytene: {fileID: 0}
 --- !u!1 &1451977359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715628353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142.40695, y: 2.1220198, z: -138.22}
+  m_LocalPosition: {x: 142.40695, y: 2.1220198, z: -88.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1250425538}

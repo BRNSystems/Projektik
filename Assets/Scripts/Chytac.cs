@@ -10,6 +10,10 @@ public class Chytac : MonoBehaviour
 
     public Pohybovac mover;
 
+
+    public float offsetx;
+
+    public float offsety;
     public GameObject chytene;
 
     bool caught = false;
@@ -19,11 +23,10 @@ public class Chytac : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(transform.position, new Vector3(-mover.zrot, 10f, mover.xrot), Color.blue, 0);
-        Debug.Log(new Vector3(-mover.zrot, 10f, mover.xrot));
+        Debug.Log(new Vector3(mover.zrot, 10f, mover.xrot));
         if(Input.GetButtonDown("Fire1")){
             caught = false;
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(-mover.zrot, 0f, mover.xrot), 100);
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(mover.xrot + offsetx, mover.zrot + offsety, 0f), 100);
             float mindist = 30f;
 
             foreach (RaycastHit hit in hits){
