@@ -26,7 +26,7 @@ public class Chytac : MonoBehaviour
         Debug.Log(new Vector3(mover.zrot, 10f, mover.xrot));
         if(Input.GetButtonDown("Fire1")){
             caught = false;
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(mover.xrot + offsetx, mover.zrot + offsety, 0f), 100);
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, 30f, new Vector3(mover.xrot + offsetx, mover.zrot + offsety, 0f), 30f);
             float mindist = 30f;
 
             foreach (RaycastHit hit in hits){
